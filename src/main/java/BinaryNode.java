@@ -1,3 +1,4 @@
+//checking if this worked
 class BinaryNode<T>
 {
    private T             data;
