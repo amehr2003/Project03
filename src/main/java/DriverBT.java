@@ -75,29 +75,29 @@ public class DriverBT
 	
 	/**-------------------------------------------------------------------- */
 	/**Task 4: Create a tree case as shown in assignment 3*/
-	public static void createTree2(BinaryTree<String> tree)
-	{
-		// Leaves
-		BinaryTree<String> dTree = new BinaryTree<>("D");
-		BinaryTree<String> eTree = new BinaryTree<>("E");
-		BinaryTree<String> gTree = new BinaryTree<>("G");
+    public static void createTree2(BinaryTree<String> tree)
+    {
+        // Leaves
+        BinaryTree<String> jTree = new BinaryTree<>("J");
+        BinaryTree<String> aTree = new BinaryTree<>("A");
+        BinaryTree<String> sTree = new BinaryTree<>("S");
 
-		// Subtrees:
-		BinaryTree<String> fTree = new BinaryTree<>("F", null, gTree);
-		BinaryTree<String> bTree = new BinaryTree<>("B", dTree, eTree);
-		BinaryTree<String> cTree = new BinaryTree<>("C", fTree, null);
+        // Subtrees:
+        BinaryTree<String> fTree = new BinaryTree<>("F", null, sTree);
+        BinaryTree<String> bTree = new BinaryTree<>("B", jTree, aTree);
+        BinaryTree<String> cTree = new BinaryTree<>("C", fTree, null);
 
-		tree.setTree("A", bTree, cTree);
+        tree.setTree("A", bTree, cTree);
 
-		System.out.println("\nGiven Tree:\n");
-		System.out.println("     A      ");
-		System.out.println("   /   \\  ");
-		System.out.println("  B     C  ");
-		System.out.println(" / \\   /  ");
-		System.out.println("D   E  F   ");
-		System.out.println("        \\ ");
-		System.out.println("         G ");
-		System.out.println();
-	} // end createTree2
+        System.out.println("\nGiven Tree:\n");
+        System.out.println("     A      ");
+        System.out.println("   /   \\  ");
+        System.out.println("  B     C  ");
+        System.out.println(" / \\   /  ");
+        System.out.println("J   A  F   ");
+        System.out.println("        \\ ");
+        System.out.println("         S ");
+        System.out.println();
+    } // end createTree2
 
 }  // end DriverBT
