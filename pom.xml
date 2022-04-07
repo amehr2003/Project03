@@ -19,8 +19,6 @@
             </plugin>
         </plugins>
     </build>
-<<<<<<< Updated upstream
-=======
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -29,7 +27,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
->>>>>>> Stashed changes
+
 
 
 </project>
