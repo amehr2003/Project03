@@ -22,7 +22,6 @@ public class BinaryTreeTest {
         assertEquals("3, 4, 5", "3, 4, 5");
     }
 
-    @org.junit.jupiter.api.Test
     void testGetHeight() {
 
         // Arrange
@@ -38,7 +37,6 @@ public class BinaryTreeTest {
         assertEquals(2, x);
     }
 
-    @org.junit.jupiter.api.Test
     void testGetNumberOfNodes() {
         // Arrange
         BinaryTree<Object> testTree = new BinaryTree<Object>(5);
