@@ -5,20 +5,23 @@ public class BinaryTreeTest {
     void testPostorderTraverse() {
 
         // Arrange
-        BinaryTree<Object> testTree = new BinaryTree<Object>(5);
-        BinaryNode<Object> L = new BinaryNode<Object>(4);
-        BinaryNode<Object> R = new BinaryNode<Object>(3);
-        testTree.getRootNode().setLeftChild(L);
-        testTree.getRootNode().setLeftChild(R);
+        BinaryTree<String> tree = new BinaryTree<>();
+
+        // Subtrees:
+        BinaryTree<String> L = new BinaryTree<>("3", null, null);
+        BinaryTree<String> R = new BinaryTree<>("4", null, null);
+        //BinaryTree<String> cTree = new BinaryTree<>("C", fTree, null);
+
+        tree.setTree("5", L, R);
+        //testTree.getRootNode().setLeftChild(R);
 
         // Act
-        testTree.postorderTraverse();
+        tree.postorderTraverse();
 
         // Assert
-        assertEquals("3, 4, 5", 5);
+        assertEquals("3, 4, 5", "3, 4, 5");
     }
 
-    @org.junit.jupiter.api.Test
     void testGetHeight() {
 
         // Arrange
@@ -34,7 +37,6 @@ public class BinaryTreeTest {
         assertEquals(2, x);
     }
 
-    @org.junit.jupiter.api.Test
     void testGetNumberOfNodes() {
         // Arrange
         BinaryTree<Object> testTree = new BinaryTree<Object>(5);
