@@ -158,27 +158,47 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    @return  The number of nodes in the "whole" tree */
    public int getNumberOfNodes()
    {
-
-      return 0;
+      return getNumberOfNodes(this.root);
    } // end getNumberOfNodes
    
    /** A Recursive Method in the BinaryTree Class   
     * Counts the nodes in the subtree rooted at this node.
    @return  The number of nodes in the subtree rooted at this node. */
-   private int getNumberOfNodes(BinaryNode<T> node)
-   {
-      return 0;
+   private int getNumberOfNodes(BinaryNode<T> node) {
+      int nodeCount = 0;
+      if (node == null) {
+         return 0;
+      }
+
+      if (node.hasLeftChild() || node.hasRightChild()) {
+         getNumberOfNodes(node);
+         nodeCount++;
+      }
+      return nodeCount;
+   }
+
+   /**
+      if (node.hasRightChild() == true)
+      {
+         nodeCount=nodeCount+2;
+      }
+
+      if (node.hasLeftChild()&& (node.hasRightChild()==false))
+      {
+         nodeCount++;
+      }
    } // end getNumberOfNodes
    
    /** The following calls getNumberOfNodes_binaryNodeMethod() which is a recursive binaryNode class method
     * Counts the nodes in the "whole" tree
    @return  The number of nodes in the "whole" tree. */
-   public int getNumberOfNodes_callBinaryNodeMethod()
+
+      public int getNumberOfNodes_callBinaryNodeMethod()
    {
-	   int numberOfNodes = 0;
-	   if (root != null)
-		   numberOfNodes = root.getNumberOfNodes_binaryNodeMethod();
-	   return numberOfNodes;
-   } // end getNumberOfNodes_callBinaryNodeMethod
-   
-} // end BinaryTree
+      int numberOfNodes = 0;
+      if (root != null)
+         numberOfNodes = root.getNumberOfNodes_binaryNodeMethod();
+      return numberOfNodes;
+   }
+}
+
