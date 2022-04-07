@@ -64,14 +64,14 @@ class BinaryNode<T>
    {
       return rightChild;
    } // end getRightChild
-   
+
    /** Sets this node’s right child to a given node.
     @param newRightChild  A node that will be the right child. */
    public void setRightChild(BinaryNode<T> newRightChild)
    {
       rightChild = newRightChild;
    } // end setRightChild
-   
+
    /** Detects whether this node has a right child.
     @return  True if the node has a right child. */
    public boolean hasRightChild()
@@ -85,8 +85,8 @@ class BinaryNode<T>
    {
       return (leftChild == null) && (rightChild == null);
    } // end isLeaf
-  
-   /**A Recursion Example in the BinaryNode Class  
+
+   /**A Recursion Example in the BinaryNode Class
     * Copies the subtree rooted at this node.
        @return  The root of a copy of the subtree rooted at this node. */
    public BinaryNode<T> copy()
@@ -94,16 +94,16 @@ class BinaryNode<T>
       BinaryNode<T> newRoot = new BinaryNode<>(data);
       if (leftChild != null)
          newRoot.setLeftChild(leftChild.copy());
-      
+
       if (rightChild != null)
          newRoot.setRightChild(rightChild.copy());
-      
+
       return newRoot;
    } // end copy
 
    /** --------------------------------------------------------------------
     * Part of Task 1 */
-   /** A Recursive Method in the BinaryNode Class   
+   /** A Recursive Method in the BinaryNode Class
     * prints (using post-order traversal) all nodes of the subtree rooted at "this" node */
    public void postorderTraverse_binaryNodeMethod()
    {
@@ -115,19 +115,30 @@ class BinaryNode<T>
       }
       System.out.println(this.getData());
    }
-   
+
    /**-------------------------------------------------------------------- 
     * Part of Task 2*/
-   /** A Recursive Method in the BinaryNode Class   
+   /** A Recursive Method in the BinaryNode Class
     * Computes the height of the subtree rooted at "this" node.
    @return  The height of the subtree rooted at "this" node. */
    public int getHeight_binaryNodeMethod()
    {
-      if ( this.data == null) {
+      int h = 0;
+      if(this==null){
          return 0;
       }
-         int height = Math.max(this.rightChild.getHeight_binaryNodeMethod(), this.leftChild.getHeight_binaryNodeMethod());
-      return height + 1; //plus one for the offset of the height for the root node
+      if (this.leftChild != null && this.rightChild != null) {
+          h = Math.max(this.leftChild.getHeight_binaryNodeMethod(), this.rightChild.getHeight_binaryNodeMethod());
+         h = h + 1;
+      }
+//      int height = 0;
+//      if (this.data != null){
+//         return 0;
+//      }
+//
+//      height = Math.max(this.leftChild.getHeight_BinaryNodeMethod(),
+//              this.rightChild.getHeight_BinaryNodeMethod());
+        return h;
    } // end getHeight
    
    /** -------------------------------------------------------------------- */
